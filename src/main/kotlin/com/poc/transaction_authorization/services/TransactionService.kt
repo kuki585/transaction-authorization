@@ -7,6 +7,9 @@
  ***********************************************/
 package com.poc.transaction_authorization.services
 
+import com.poc.transaction_authorization.dtos.AuthorizationRequestDTO
+import com.poc.transaction_authorization.dtos.AuthorizationResponseDTO
+
 /**
  * This interface acts as the template to provide business logic for the
  * addition of Authentication.
