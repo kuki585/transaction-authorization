@@ -17,5 +17,5 @@ import com.poc.transaction_authorization.dtos.AuthorizationResponseDTO
  *
  */
 interface TransactionService {
-    fun authorize(AuthorizationRequestDTO : AuthorizationRequestDTO) : AuthorizationResponseDTO
+    fun authorize(authorizationRequestDTO : AuthorizationRequestDTO) : AuthorizationResponseDTO
 }
