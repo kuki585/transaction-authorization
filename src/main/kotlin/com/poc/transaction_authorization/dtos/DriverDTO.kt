@@ -13,7 +13,7 @@ package com.poc.transaction_authorization.dtos
  *
  */
 data class DriverDTO(
-    val driverId: String,
+    val driverId: String? = null,
     val driverName: String,
     val chargingAllowed: Boolean
 )

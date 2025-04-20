@@ -16,7 +16,7 @@ import com.poc.transaction_authorization.dtos.DriverDTO
  *
  */
 interface DriverService {
-    fun registerDriver(driverDTO : DriverDTO)
+    fun registerDriver(driverDTO : DriverDTO): String?
 
     fun updateDriver(driverDTO : DriverDTO)
 

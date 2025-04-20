@@ -13,6 +13,6 @@ package com.poc.transaction_authorization.dtos
  *
  */
 data class DriverStationAssociationDTO(
-    val associationId: String,
+    val associationId: String? = null,
     val driverId: String,
     val stationId: String)

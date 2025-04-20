@@ -13,5 +13,5 @@ package com.poc.transaction_authorization.dtos
  *
  */
 data class StationDTO(
-    val stationId: String,
+    val stationId: String? = null,
     val stationName: String)

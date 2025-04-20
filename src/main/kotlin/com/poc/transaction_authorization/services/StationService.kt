@@ -16,7 +16,7 @@ import com.poc.transaction_authorization.dtos.StationDTO
  *
  */
 interface StationService {
-    fun registerStation(stationDTO : StationDTO)
+    fun registerStation(stationDTO : StationDTO): String?
 
     fun updateStation(stationDTO : StationDTO)
 

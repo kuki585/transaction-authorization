@@ -22,25 +22,26 @@ import org.springframework.web.bind.annotation.*
 @RequestMapping("/driver/station")
 class DriverStationController(private val driverStationService: DriverStationService) {
 
-    @PostMapping("register")
-    fun registerDriver(@RequestBody driverStationDTO : DriverStationAssociationDTO) {
+    @PostMapping
+    fun registerDriver(@RequestBody driverStationDTO :
+                       DriverStationAssociationDTO): String? {
 
-        driverStationService.registerDriverStation(driverStationDTO)
+        return driverStationService.registerDriverStation(driverStationDTO)
     }
 
-    @PutMapping("update")
+    @PutMapping
     fun updateDriver(@RequestBody driverStationDTO : DriverStationAssociationDTO) {
 
         driverStationService.updateDriverStation(driverStationDTO)
     }
 
-    @DeleteMapping("unRegister/{id}")
+    @DeleteMapping("/{associationId}")
     fun unregisterDriver(@PathVariable associationId : String) {
 
         driverStationService.unregisterDriverStation(associationId)
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{associationId}")
     fun fetchDriver(@PathVariable associationId : String) : ResponseEntity<Any?>{
 
         val driverStationDTO : DriverStationAssociationDTO =

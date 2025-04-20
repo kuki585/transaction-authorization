@@ -13,9 +13,11 @@ class StationServiceImpl(
     private val stationMapper : StationMapper
 ) : StationService {
 
-    override fun registerStation(stationDTO: StationDTO) {
+    override fun registerStation(stationDTO: StationDTO): String? {
         val station : Station = stationMapper.mapToEntity(stationDTO)
-        stationRepository.save<Station>(station)
+        val responseStation : Station =
+            stationRepository.save<Station>(station)
+        return responseStation.stationId
     }
 
     override fun updateStation(stationDTO: StationDTO) {

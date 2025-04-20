@@ -21,7 +21,7 @@ data class Station(
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name="station_id")
-    val stationId: String,
+    val stationId: String?,
 
     @Column(name="station_name")
     val stationName: String

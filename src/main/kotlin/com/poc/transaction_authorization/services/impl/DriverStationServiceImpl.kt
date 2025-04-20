@@ -13,10 +13,12 @@ class DriverStationServiceImpl(
     private val driverStationMapper : DriverStationMapper
 ) : DriverStationService {
 
-    override fun registerDriverStation(driverStationDTO: DriverStationAssociationDTO) {
+    override fun registerDriverStation(driverStationDTO: DriverStationAssociationDTO) : String? {
         val driverStationAssociation : DriverStationAssociation =
             driverStationMapper.mapToEntity(driverStationDTO)
-        driverStationAssociationRepo.save<DriverStationAssociation>(driverStationAssociation)
+        val driverStationResponse : DriverStationAssociation =
+            driverStationAssociationRepo.save<DriverStationAssociation>(driverStationAssociation)
+        return driverStationResponse.associationId
     }
 
     override fun updateDriverStation(driverStationDTO: DriverStationAssociationDTO) {

@@ -13,9 +13,10 @@ class DriverServiceImpl(
     private val driverMapper : DriverMapper
 ) : DriverService {
 
-    override fun registerDriver(driverDTO: DriverDTO) {
+    override fun registerDriver(driverDTO: DriverDTO): String? {
         val driver : Driver = driverMapper.mapToEntity(driverDTO)
-        driverRepository.save<Driver>(driver)
+        val responseDriver = driverRepository.save<Driver>(driver)
+        return responseDriver.driverId;
     }
 
     override fun updateDriver(driverDTO: DriverDTO) {

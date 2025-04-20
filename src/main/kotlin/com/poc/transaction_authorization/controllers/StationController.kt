@@ -19,28 +19,28 @@ import org.springframework.web.bind.annotation.*
  *
  */
 @RestController
-@RequestMapping("/station")
+@RequestMapping("/stations")
 class StationController(private val stationService: StationService) {
 
-    @PostMapping("register")
-    fun registerStation(@RequestBody stationDTO : StationDTO) {
+    @PostMapping
+    fun registerStation(@RequestBody stationDTO : StationDTO): String? {
 
-        stationService.registerStation(stationDTO)
+        return stationService.registerStation(stationDTO)
     }
 
-    @PutMapping("update")
+    @PutMapping
     fun updateStation(@RequestBody stationDTO : StationDTO) {
 
         stationService.updateStation(stationDTO)
     }
 
-    @DeleteMapping("unRegister/{id}")
+    @DeleteMapping("/{stationId}")
     fun unregisterStation(@PathVariable stationId : String) {
 
         stationService.unregisterStation(stationId)
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{stationId}")
     fun fetchStation(@PathVariable stationId : String) : ResponseEntity<Any?>{
 
         val stationDTO : StationDTO = stationService.fetchStation(stationId)

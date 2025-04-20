@@ -26,7 +26,7 @@ data class Driver(
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name="driver_id")
-    val driverId: String,
+    val driverId: String?,
 
     @Column(name="driver_name")
     val driverName: String,

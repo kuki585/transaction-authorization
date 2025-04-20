@@ -25,7 +25,7 @@ data class DriverStationAssociation(
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name="association_id")
-    val associationId: String,
+    val associationId: String?,
 
     @Column(name="driver_id")
     val driverId: String,

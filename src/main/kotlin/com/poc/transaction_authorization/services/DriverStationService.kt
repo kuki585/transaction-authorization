@@ -16,7 +16,7 @@ import com.poc.transaction_authorization.dtos.DriverStationAssociationDTO
  *
  */
 interface DriverStationService {
-    fun registerDriverStation(driverStationDTO : DriverStationAssociationDTO)
+    fun registerDriverStation(driverStationDTO : DriverStationAssociationDTO): String?
 
     fun updateDriverStation(driverStationDTO : DriverStationAssociationDTO)
 
