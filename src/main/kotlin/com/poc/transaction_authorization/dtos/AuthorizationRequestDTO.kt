@@ -5,14 +5,13 @@
  *  20-Apr-2025     Ankur Jain  Initial Draft
  *
  ***********************************************/
-package com.poc.transaction_authorization.services
+package com.poc.transaction_authorization.dtos
 
 /**
- * This interface acts as the template to provide business logic for the
- * addition of Authentication.
+ * This class is used to hold AuthorizationRequest object.
  * @author Ankur Jain
  *
  */
-interface AuthenticationService {
-    fun authenticate(input : String) : Boolean
-}
+data class AuthorizationRequestDTO(
+    val stationUuid: String,
+    val driverIdentifier: DriverIdentifierDTO)
