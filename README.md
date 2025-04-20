@@ -13,18 +13,34 @@ git clone https://github.com/kuki585/transaction-authorization.git
 Run as Spring boot application.
 
 Note:
-#1.Below url will open Swagger documentation to refer Rest APIs
-#http://localhost:9090/swagger-ui.html
+Please import transaction_authorization.postman_collection.json file in postman
+and call
+POST
+localhost:9090/transaction/authorize
 
-#2.Below URL contains all the APIs with sample data
-#https://www.getpostman.com/collections/b55eb1f28ffd59fad282
-#Import this url in your postman.
+{
+"stationUuid": "3397d3d4-c67d-4fe8-bea8-5ca83ddf9bdc",
+"driverIdentifier": {
+"id": "f75b7166-4a2b-477d-9016-264b9552b334"
+}
+}
 
-#3.Use below URL to login to H2 console
-http://localhost:9090/h2-console/login.do?jsessionid=24bf33546732cf7b0e0698856e192da5
+If you want you can create drivers using below API
 
-#4.Use below query to check the data in H2
-#select * from drivers;
-#select * from stations;
-#select * from driver_stations;
+POST
+localhost:9090/drivers
+
+{
+
+    "driverName": "John",
+    "chargingAllowed": true
+}
  
+In order to check Kafka integration 
+you will have to open a cmd and listen for test-response-topic after firing
+localhost:9090/transaction/authorize API
+
+Refer to kafka_windows_setup.md for that
+
+Todo:
+Test case writing is pending
